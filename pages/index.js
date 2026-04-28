@@ -269,12 +269,21 @@ function Section({ section, checked, notes, onToggle, showNoteFor, setShowNoteFo
       <div className={styles.section}>
         <div className={styles.pakemHeader}>
           <h2 className={styles.sectionTitle}>{section.title || 'PAKEM DIRI'}</h2>
-          <div className={styles.pakemScore}>
-            <div className={styles.pakemScoreNum} style={{ color: riskColor }}>{score}%</div>
-            <div className={styles.pakemRisk} style={{ color: riskColor }}>
-              Tingkat Risiko: <strong>{riskLevel}</strong>
+          <div className={styles.widgetsContainer}>
+            {/* Widget Kepatuhan */}
+            <div className={styles.complianceWidget}>
+              <div className={styles.widgetIcon}>✅</div>
+              <div className={styles.widgetLabel}>TINGKAT KEPATUHAN</div>
+              <div className={styles.widgetValue}>{score}%</div>
+              <div className={styles.widgetDetail}>({done} dari {total} tindakan)</div>
             </div>
-            <div className={styles.pakemCount}>{done}/{total} terpenuhi</div>
+            {/* Widget Risiko */}
+            <div className={`${styles.riskWidget} ${styles[`risk_${riskLevel.toLowerCase().replace(/\s/g, '')}`]}`}>
+              <div className={styles.widgetIcon}>⚠️</div>
+              <div className={styles.widgetLabel}>TINGKAT RISIKO</div>
+              <div className={styles.widgetValue}>{riskLevel}</div>
+              <div className={styles.widgetDetail}>Berdasarkan kepatuhan saat ini</div>
+            </div>
           </div>
         </div>
         {section.description && <p className={styles.pakemDesc}>{section.description}</p>}
@@ -300,6 +309,10 @@ function Section({ section, checked, notes, onToggle, showNoteFor, setShowNoteFo
             </div>
           ))}
         </div>
+        <p className={styles.helperText}>
+          📘 Persentase kepatuhan = seberapa banyak tindakan keamanan yang sudah Anda lakukan.<br/>
+          Semakin tinggi kepatuhan, semakin rendah tingkat risiko.
+        </p>
       </div>
     )
   }
