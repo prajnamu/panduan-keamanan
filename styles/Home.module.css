@@ -828,3 +828,94 @@
     font-size: 1.3rem;
   }
 }
+
+/* Widget terpisah untuk PAKEM DIRI */
+.widgetsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.complianceWidget, .riskWidget {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.complianceWidget {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #1e3a8a;
+}
+
+.riskWidget {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+/* Warna khusus untuk level risiko */
+.risk_sangatrendah {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: #14532d;
+}
+.risk_rendah {
+  background: #e0f2fe;
+  border-color: #bae6fd;
+  color: #075985;
+}
+.risk_sedang {
+  background: #fef9c3;
+  border-color: #fde047;
+  color: #854d0e;
+}
+.risk_tinggi {
+  background: #ffedd5;
+  border-color: #fed7aa;
+  color: #9a3412;
+}
+.risk_sangattinggi {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #7f1d1d;
+}
+
+.widgetIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.widgetLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.widgetValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.widgetDetail {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.helperText {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin-top: 1.5rem;
+  background: #f9fafb;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
