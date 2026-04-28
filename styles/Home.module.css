@@ -834,18 +834,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
-  max-width: 60%;          /* ← batasi lebar container */
-  margin: 1rem auto;       /* ← tengahkan secara horizontal */
+  width: 100%;           /* lebar penuh container */
+  margin: 1rem 0;
 }
 
 .complianceWidget, .riskWidget {
-  flex: 1;
-  min-width: 180px;
+  flex: 1;               /* masing-masing mengambil porsi sama */
+  min-width: 200px;      /* agar di mobile tidak terlalu kecil, jika kurang dari ini akan turun ke bawah */
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.2rem 0.8rem;
+  padding: 1rem 0.8rem;
   text-align: center;
   transition: all 0.2s;
 }
