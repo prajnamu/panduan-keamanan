@@ -835,7 +835,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin: 1rem 0 1.5rem;
+  max-width: 60%;          /* ← batasi lebar container */
+  margin: 1rem auto;       /* ← tengahkan secara horizontal */
 }
 
 .complianceWidget, .riskWidget {
