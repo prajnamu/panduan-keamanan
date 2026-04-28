@@ -829,93 +829,104 @@
   }
 }
 
-/* Widget terpisah untuk PAKEM DIRI */
+/* Widget terpisah untuk PAKEM DIRI - seamless */
 .widgetsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 1rem 0 1.5rem;
 }
 
 .complianceWidget, .riskWidget {
   flex: 1;
-  min-width: 200px;
-  padding: 1.2rem;
-  border-radius: 1rem;
+  min-width: 180px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 0.8rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.2s;
 }
 
-.complianceWidget {
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
-  color: #1e3a8a;
-}
-
-.riskWidget {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #991b1b;
-}
-
-/* Warna khusus untuk level risiko */
-.risk_sangatrendah {
-  background: #dcfce7;
-  border-color: #bbf7d0;
-  color: #14532d;
-}
-.risk_rendah {
-  background: #e0f2fe;
-  border-color: #bae6fd;
-  color: #075985;
-}
-.risk_sedang {
-  background: #fef9c3;
-  border-color: #fde047;
-  color: #854d0e;
-}
-.risk_tinggi {
-  background: #ffedd5;
-  border-color: #fed7aa;
-  color: #9a3412;
-}
-.risk_sangattinggi {
-  background: #fee2e2;
-  border-color: #fecaca;
-  color: #7f1d1d;
+.complianceWidget:hover, .riskWidget:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow);
 }
 
 .widgetIcon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
 
 .widgetLabel {
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
 }
 
 .widgetValue {
   font-size: 1.8rem;
   font-weight: 800;
+  line-height: 1.2;
   margin-bottom: 0.25rem;
 }
 
 .widgetDetail {
   font-size: 0.7rem;
-  opacity: 0.8;
+  color: var(--text-secondary);
 }
 
+/* Compliance widget (warna netral) */
+.complianceWidget .widgetIcon {
+  color: var(--accent);
+}
+.complianceWidget .widgetValue {
+  color: var(--text-primary);
+}
+
+/* Risk widget - hanya teks & ikon yang berwarna sesuai level */
+.riskWidget .widgetIcon {
+  transition: color 0.2s;
+}
+.riskWidget .widgetValue {
+  transition: color 0.2s;
+}
+
+/* Warna berdasarkan level risiko */
+.risk_sangatrendah .riskWidget .widgetIcon,
+.risk_sangatrendah .riskWidget .widgetValue {
+  color: #3d7a4e;
+}
+.risk_rendah .riskWidget .widgetIcon,
+.risk_rendah .riskWidget .widgetValue {
+  color: #5a9e6f;
+}
+.risk_sedang .riskWidget .widgetIcon,
+.risk_sedang .riskWidget .widgetValue {
+  color: #c9a84c;
+}
+.risk_tinggi .riskWidget .widgetIcon,
+.risk_tinggi .riskWidget .widgetValue {
+  color: #d97706;
+}
+.risk_sangattinggi .riskWidget .widgetIcon,
+.risk_sangattinggi .riskWidget .widgetValue {
+  color: #c8411a;
+}
+
+/* Helper text (penjelasan) */
 .helperText {
   text-align: center;
   font-size: 0.75rem;
-  color: #4b5563;
+  color: var(--text-muted);
   margin-top: 1.5rem;
-  background: #f9fafb;
-  padding: 0.6rem;
-  border-radius: 8px;
+  background: var(--bg);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
 }
